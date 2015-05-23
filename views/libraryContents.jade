@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h2= json.title + ' by ' + json.author
+  p= json.copyright
+  img(src=json.coverImage, alt="Cover image")
+  ul
+    each el in json.toc
+      li
+        a(href=el.href)= el.text

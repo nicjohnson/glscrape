@@ -1,0 +1,47 @@
+body {
+	padding: 20px;
+	font: 16px 'Droid Serif', serif;
+	line-height: 1.5;
+}
+
+ul, h1, h2, h3, h4 {
+	font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4 {
+	font-weight: 800;
+}
+
+a {
+  /*color: #00B7FF;*/
+}
+
+.Heading1, .Sub2 {
+	font-size: 24px;
+}
+
+.Quote {
+	padding-left: 20px;
+	border-left: 2px solid #ccc;
+	font-weight: bold;
+}
+.Quote i {
+	font-style: normal;
+}
+
+.footnote {
+	font-size: smaller;
+	vertical-align: super;
+}
+
+.alphaLinks {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.alphaLinks li {
+	display: inline-block;
+}
+.alphaLinks li a {
+	display: block;
+	padding: 4px;
+}

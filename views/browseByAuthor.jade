@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h2 Authors
+  ul(class='alphaLinks')
+    each el in json.alphaLinks
+      li
+        a(href=el.href)= el.text
+  ul
+    each el in json.authors
+      li
+        a(href=el.href)= el.text

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h2= json.bookTitle + ' by '
+    each author, index in json.authors
+      a(href= author.href)= author.text 
+      if index + 1 != json.authors.length
+        span ,&nbsp;
+  h3= json.chapterTitle
+  include ./includes/chapterNav.jade
+  img(src= json.coverImage, alt='Cover image')
+  each el in json.paragraphs
+    #{el.tag}(class= el.classes) !{el.text}
+  include ./includes/chapterNav.jade
