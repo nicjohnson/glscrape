@@ -4,7 +4,7 @@ var extend = require('extend');
 var cheerio = require('cheerio');
 var request = require('request');
 var j = request.jar();
-var cookie = request.cookie('auth_token=9f5e87096b404759462cdcc288db1f3561a447e3');
+var cookie = request.cookie('auth_token=' + process.env.AUTH_TOKEN);
 
 router.get('/', function(req, res, next) {
 	var json = {};
