@@ -6,13 +6,22 @@ var request = require('request');
 var j = request.jar();
 var cookie = request.cookie('auth_token=' + process.env.AUTH_TOKEN);
 
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
 	var json = {};
 
 	res.render('index', {json: json});
 });
 
-router.get('/library/document/:doc', function(req, res, next){
+router.get('/token', function (req, res, next) {
+	res.render('token');
+});
+
+router.post('/token', function (req, res, next) {
+	process.env.AUTH_TOKEN = req.body.token;
+	res.redirect('/');
+});
+
+router.get('/library/document/:doc', function (req, res, next){
 
 	var url = 'http://gospelink.com/library/document/' + req.params.doc;
 
@@ -22,6 +31,16 @@ router.get('/library/document/:doc', function(req, res, next){
 
         if(!error){
             var $ = cheerio.load(html);
+
+            console.log('html: ', html);
+
+            var anchors = $('a');
+
+            for (var i = anchors.length - 1; i >= 0; i--) {
+            	if (anchors[i].attribs.href === '/users/login') {
+            		return res.redirect('/token');
+            	};
+            };
 
             var json = { 
             	prev: "",
