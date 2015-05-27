@@ -1,6 +1,6 @@
 body {
 	padding: 20px;
-	font: 16px 'Droid Serif', serif;
+	font: 20px 'Vollkorn', serif;
 	line-height: 1.5;
 }
 
@@ -15,6 +15,11 @@ a {
   /*color: #00B7FF;*/
 }
 
+.content {
+	max-width: 34em;
+	margin: 0 auto;
+}
+
 .Heading1, .Sub2 {
 	font-size: 24px;
 }
@@ -22,7 +27,6 @@ a {
 .Quote {
 	padding-left: 20px;
 	border-left: 2px solid #ccc;
-	font-weight: bold;
 }
 .Quote i {
 	font-style: normal;
@@ -44,4 +48,15 @@ a {
 .alphaLinks li a {
 	display: block;
 	padding: 4px;
+}
+
+@media only screen and (max-width : 480px) {
+	body {
+		padding: 10px;
+	}
+
+	.content {
+		max-width: auto;
+		margin: auto;
+	}
 }
