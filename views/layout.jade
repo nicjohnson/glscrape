@@ -7,19 +7,25 @@ html
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Vollkorn:400,700,400italic,700italic|Open+Sans:800,400')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    div.content
-      h1 
-        a(href= '/') GL Scraper
-      ul
-        li
-          a(href= '/browse/alphabetical?sort=A') Browse by Title
-        li
-          a(href= '/browse/authors?sort=A') Browse by Author
-        li
-          a(href= '/browse/topics?sort=A') Browse by Topic
-        li
-          a(href= '/browse/new') Browse New Books
-        li
-          a(href= '/lessons') Lesson Helps
+    ul.nav#menu
+      li
+        a(href= '/') Home
+      li
+        a(href= '/browse/alphabetical?sort=A') Browse by Title
+      li
+        a(href= '/browse/authors?sort=A') Browse by Author
+      li
+        a(href= '/browse/topics?sort=A') Browse by Topic
+      li
+        a(href= '/browse/new') Browse New Books
+      li
+        a(href= '/lessons') Lesson Helps
 
-      block content
+    div#panel
+      span(class='toggle-button') ☰
+      
+      div.content
+        block content
+
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/slideout/0.1.9/slideout.min.js')
+    script(type='text/javascript', src='/javascripts/app.js')
