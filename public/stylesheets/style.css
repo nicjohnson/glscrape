@@ -17,6 +17,10 @@ body {
   color: #5F4B32;
 }
 
+a.fn {
+  color: #5F4B32;
+}
+
 ul, h1, h2, h3, h4 {
   font-family: 'Open Sans', sans-serif;
   margin-top: 0;
@@ -43,8 +47,24 @@ p {
   margin: 0;
 }
 
-.Heading1, .Sub1 {
-  font-size: 24px;
+.chapter-nav p {
+ text-indent: 0;
+}
+
+.ChapNo, .PartNo {
+  text-indent: 0;
+  font-size: 2em;
+  padding: 0.25em 0.5em;
+  background: #5F4B32;
+  color: #FBF0D9;
+  display: inline-block;
+  line-height: 1;
+  margin: 0.25em 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Heading1, .Sub1, .Section {
+  font-size: 1.2em;
   text-indent: 0;
   margin: 1.5em 0 0.5em;
   font-family: 'Open Sans', sans-serif;
@@ -52,7 +72,7 @@ p {
   text-align: center;
 }
 .Sub2 {
-  font-size: 24px;
+  font-size: 1.2em;
   text-indent: 0;
   margin: 1.5em 0 0.5em;
 }
@@ -133,13 +153,24 @@ p {
     max-width: auto;
     margin: auto;
   }
+
+  p {
+    text-indent: 1em;
+  }
 }
 
 @media print {
-  .nav, .app-title, .chapter-nav {
+  .nav, .app-title, .chapter-nav, #menu, .toggle-button {
     display: none;
   }
   body {
-    font: 20px 'Vollkorn', serif;
+    background: #fff;
+    color: #000;
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+  }
+  a, a:visited {
+    color: #000;
   }
 }
